@@ -1,8 +1,9 @@
 ﻿using System;
-using System.Linq;
 using DeviceDiscovery.Models;
 using Nanoleaf.Client;
 using Nanoleaf.Client.Discovery;
+using Microsoft.Extensions.Configuration;
+
 
 namespace Nanoleaf.Test
 {
@@ -10,6 +11,11 @@ namespace Nanoleaf.Test
     {
         static void Main()
         {
+            var config = new ConfigurationBuilder()
+                .AddUserSecrets<Program>()
+                .Build();
+
+
             //var request = new NanoleafDiscoveryRequest
             //{
             //    ST = SearchTarget.Nanoleaf
@@ -33,14 +39,17 @@ namespace Nanoleaf.Test
             //    }
             //}
 
-            using (var client = new NanoleafClient("192.168.0.10"))
+
+            var ip = config["DeviceIp"];
+            var token = config["AuthToken"];
+
+            using (var client = new NanoleafClient(ip, token))
             {
-                client.Authorize("aDmIB12fYRH7WAOKrzt1ucEuaJWzltT3");
                 var res = client.GetInfoAsync().Result;
                 Console.WriteLine($"Test for {client.HostName}: " + res.State.Switch.Power);
             }
 
-            Console.ReadKey();
+            //Console.ReadKey();
         }
     }
 }
