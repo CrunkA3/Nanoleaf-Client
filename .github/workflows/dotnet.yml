@@ -19,10 +19,10 @@ jobs:
     - name: Setup .NET
       uses: actions/setup-dotnet@v3
       with:
-        dotnet-version: 6.0.x
+        dotnet-version: 7.0.x
     - name: Restore dependencies
-      run: dotnet restore Nanoleaf.Client
+      run: dotnet restore Nanoleaf.Client/Nanoleaf.Test
     - name: Build
-      run: dotnet build Nanoleaf.Client --no-restore
+      run: dotnet build Nanoleaf.Client/Nanoleaf.Test --no-restore
     #- name: Test
-    #  run: dotnet test Nanoleaf.Client --no-build --verbosity normal
+    #  run: dotnet test Nanoleaf.Client/Nanoleaf.Test --no-build --verbosity normal
