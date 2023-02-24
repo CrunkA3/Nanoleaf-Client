@@ -10,9 +10,9 @@
             "request": "launch",
             "preLaunchTask": "build",
             // If you have changed target frameworks, make sure to update the program path.
-            "program": "${workspaceFolder}/Nanoleaf.Client/Nanoleaf.Test/bin/Debug/net7/Nanoleaf.Test.dll",
+            "program": "${workspaceFolder}/Nanoleaf.Test/bin/Debug/net7/Nanoleaf.Test.dll",
             "args": [],
-            "cwd": "${workspaceFolder}/Nanoleaf.Client/Nanoleaf.Test",
+            "cwd": "${workspaceFolder}/Nanoleaf.Test",
             // For more information about the 'console' field, see https://aka.ms/VSCode-CS-LaunchJson-Console
             "console": "internalConsole",
             "stopAtEntry": false
