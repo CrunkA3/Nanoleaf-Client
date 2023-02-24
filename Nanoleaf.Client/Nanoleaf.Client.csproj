@@ -2,9 +2,10 @@
 
   <PropertyGroup>
     <TargetFrameworks>net6;net7</TargetFrameworks>
-    <Version>3.0.0.0</Version>
-    <AssemblyVersion>3.0.0.0</AssemblyVersion>
-    <FileVersion>3.0.0.0</FileVersion>
+    <PackageVersion>3.0.0.1</PackageVersion>
+    <Version>3.0.0.1</Version>
+    <AssemblyVersion>3.0.0.1</AssemblyVersion>
+    <FileVersion>3.0.0.1</FileVersion>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
     <Description>A dotnet library for Nanoleaf API.</Description>
     <PackageProjectUrl>https://github.com/CrunkA3/Nanoleaf-Client</PackageProjectUrl>
@@ -15,13 +16,11 @@
     <Product>CrunkA3.Nanoleaf</Product>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <RepositoryType>git</RepositoryType>
-	<GenerateDocumentationFile>true</GenerateDocumentationFile>
-	<PackageIconUrl>https://github.com/BullFrog13/Nanoleaf-Client/blob/master/nano1.png?raw=true</PackageIconUrl>
-	<Company>CrunkA3</Company>
-	<PackageVersion>2.0.0.0</PackageVersion>
-	<Title>Nanoleaf</Title>
-	<Copyright>MIT</Copyright>
-	<PackageReadmeFile>README.md</PackageReadmeFile>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <Company>CrunkA3</Company>
+    <Title>Nanoleaf</Title>
+    <Copyright>MIT</Copyright>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>
 
   <ItemGroup>
