@@ -21,8 +21,8 @@ jobs:
       with:
         dotnet-version: 7.0.x
     - name: Restore dependencies
-      run: dotnet restore Nanoleaf.Client/Nanoleaf.Test
+      run: dotnet restore Nanoleaf.Test
     - name: Build
-      run: dotnet build Nanoleaf.Client/Nanoleaf.Test --no-restore
+      run: dotnet build Nanoleaf.Test --no-restore
     #- name: Test
-    #  run: dotnet test Nanoleaf.Client/Nanoleaf.Test --no-build --verbosity normal
+    #  run: dotnet test Nanoleaf.Test --no-build --verbosity normal
