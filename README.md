@@ -1,7 +1,7 @@
 based on (https://github.com/BullFrog13/Nanoleaf-Client)
 
-[![NuGet](https://img.shields.io/nuget/v/Nanoleaf.Core)](https://nuget.org/packages/Nanoleaf.Core)
-
+[![NuGet](https://img.shields.io/nuget/v/CrunkA3.Nanoleaf)](https://nuget.org/packages/CrunkA3.Nanoleaf)
+[![.NET](https://github.com/CrunkA3/Nanoleaf-Client/actions/workflows/dotnet.yml/badge.svg)](https://github.com/CrunkA3/Nanoleaf-Client/actions/workflows/dotnet.yml)
 
 A .NET Core library for accessing the [RESTful Nanoleaf OpenAPI][1] over HTTP.
 
