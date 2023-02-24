@@ -1,4 +1,4 @@
-﻿using Newtonsoft.Json;
+﻿using System.Text.Json.Serialization;
 
 namespace Nanoleaf.Client.Models.Requests.Effects
 {
@@ -6,7 +6,7 @@ namespace Nanoleaf.Client.Models.Requests.Effects
     {
         public SelectEffectModel(string effectName) => EffectName = effectName;
 
-        [JsonProperty("select")]
+        [JsonPropertyName("select")]
         public string EffectName { get; set; }
     }
 }

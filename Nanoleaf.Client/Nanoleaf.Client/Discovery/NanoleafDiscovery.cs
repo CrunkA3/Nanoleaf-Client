@@ -26,13 +26,14 @@ namespace Nanoleaf.Client.Discovery
             return NanoleafClients;
         }
 
+        /// <inheritdoc/>
         protected virtual void Dispose(bool disposing)
         {
             if (!_isDisposed)
             {
                 if (disposing)
                 {
-                    foreach(var nanoleaf in NanoleafClients)
+                    foreach (var nanoleaf in NanoleafClients)
                     {
                         nanoleaf.Dispose();
                     }
@@ -42,6 +43,7 @@ namespace Nanoleaf.Client.Discovery
             }
         }
 
+        /// <inheritdoc/>
         public void Dispose()
         {
             Dispose(true);

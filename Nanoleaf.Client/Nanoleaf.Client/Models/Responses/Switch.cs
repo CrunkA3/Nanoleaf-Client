@@ -1,10 +1,10 @@
-﻿using Newtonsoft.Json;
+﻿using System.Text.Json.Serialization;
 
 namespace Nanoleaf.Client.Models.Responses
 {
     public class Switch
     {
-        [JsonProperty("value")]
+        [JsonPropertyName("value")]
         public bool Power { get; set; }
     }
 }

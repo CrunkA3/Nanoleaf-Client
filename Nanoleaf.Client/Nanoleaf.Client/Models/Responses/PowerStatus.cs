@@ -1,10 +1,10 @@
-﻿using Newtonsoft.Json;
+﻿using System.Text.Json.Serialization;
 
 namespace Nanoleaf.Client.Models.Responses
 {
     public class PowerStatus
     {
-        [JsonProperty("value")]
+        [JsonPropertyName("value")]
         public bool Value { get; set; }
     }
 }

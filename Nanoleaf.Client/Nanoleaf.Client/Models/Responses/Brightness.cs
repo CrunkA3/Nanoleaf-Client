@@ -1,16 +1,30 @@
-﻿using Newtonsoft.Json;
+﻿using System.Text.Json.Serialization;
 
 namespace Nanoleaf.Client.Models.Responses
 {
+
+    /// <summary>
+    /// vrightness state of the device
+    /// </summary>
     public class Brightness
     {
-        [JsonProperty("value")]
+        /// <summary>
+        /// current brightness of the device
+        /// </summary>
+        [JsonPropertyName("value")]
         public int Value { get; set; }
 
-        [JsonProperty("max")]
+
+        /// <summary>
+        /// maximum brightness of the device
+        /// </summary>
+        [JsonPropertyName("max")]
         public int Maximum { get; set; }
 
-        [JsonProperty("min")]
+        /// <summary>
+        /// minimum brightness of the device
+        /// </summary>
+        [JsonPropertyName("min")]
         public int Minimum { get; set; }
     }
 }

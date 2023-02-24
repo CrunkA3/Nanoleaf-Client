@@ -1,16 +1,16 @@
-﻿using Newtonsoft.Json;
+﻿using System.Text.Json.Serialization;
 
 namespace Nanoleaf.Client.Models.Requests
 {
     internal class HsvRequest
     {
-        [JsonProperty("hue")]
+        [JsonPropertyName("hue")]
         public int H { get; set; }
 
-        [JsonProperty("sat")]
+        [JsonPropertyName("sat")]
         public int S { get; set; }
 
-        [JsonProperty("brightness")]
+        [JsonPropertyName("brightness")]
         public int V { get; set; }
 
         public HsvRequest(int h, int s, int v)

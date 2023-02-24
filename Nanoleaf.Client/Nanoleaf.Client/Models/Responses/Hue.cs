@@ -1,16 +1,16 @@
-﻿using Newtonsoft.Json;
+﻿using System.Text.Json.Serialization;
 
 namespace Nanoleaf.Client.Models.Responses
 {
     public class Hue
     {
-        [JsonProperty("value")]
+        [JsonPropertyName("value")]
         public int Value { get; set; }
 
-        [JsonProperty("max")]
+        [JsonPropertyName("max")]
         public int Maximum { get; set; }
 
-        [JsonProperty("min")]
+        [JsonPropertyName("min")]
         public int Minimum { get; set; }
     }
 }

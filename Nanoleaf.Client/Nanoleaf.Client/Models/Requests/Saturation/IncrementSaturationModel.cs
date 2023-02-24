@@ -1,13 +1,12 @@
-﻿using Newtonsoft.Json;
+﻿using System.Text.Json.Serialization;
 
 namespace Nanoleaf.Client.Models.Requests.Saturation
 {
-    [JsonObject(Title = "sat")]
     internal class IncrementSaturationModel
     {
-        public IncrementSaturationModel(int increment) => Increment = increment;
+        public IncrementSaturationModel(int increment) => Increment = new IncrementValue(increment);
 
-        [JsonProperty("increment")]
-        public int Increment { get; set; }
+        [JsonPropertyName("sat")]
+        public IncrementValue Increment { get; set; }
     }
 }

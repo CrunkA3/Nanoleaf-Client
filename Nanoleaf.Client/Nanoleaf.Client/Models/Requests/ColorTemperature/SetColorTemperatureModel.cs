@@ -1,14 +1,12 @@
-﻿using Newtonsoft.Json;
+﻿using System.Text.Json.Serialization;
 
 namespace Nanoleaf.Client.Models.Requests.ColorTemperature
 {
-    [JsonObject(Title = "ct")]
-
     internal class SetColorTemperatureModel
     {
-        public SetColorTemperatureModel(int value) => Value = value;
+        public SetColorTemperatureModel(int value) => Value = new IntValue(value);
 
-        [JsonProperty("value")]
-        public int Value { get; set; }
+        [JsonPropertyName("ct")]
+        public IntValue Value { get; set; }
     }
 }

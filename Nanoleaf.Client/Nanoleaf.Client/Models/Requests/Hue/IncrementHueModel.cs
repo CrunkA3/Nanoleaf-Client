@@ -1,14 +1,12 @@
-﻿using Newtonsoft.Json;
+﻿using System.Text.Json.Serialization;
 
 namespace Nanoleaf.Client.Models.Requests.Hue
 {
-    [JsonObject(Title = "hue")]
-
     internal class IncrementHueModel
     {
-        public IncrementHueModel(int increment) => Increment = increment;
+        public IncrementHueModel(int increment) => Increment = new IncrementValue(increment);
 
-        [JsonProperty("increment")]
-        public int Increment { get; set; }
+        [JsonPropertyName("hue")]
+        public IncrementValue Increment { get; set; }
     }
 }

@@ -1,13 +1,12 @@
-﻿using Newtonsoft.Json;
+﻿using System.Text.Json.Serialization;
 
 namespace Nanoleaf.Client.Models.Requests.Hue
 {
-    [JsonObject(Title = "hue")]
     internal class SetHueModel
     {
-        public SetHueModel(int value) => Value = value;
+        public SetHueModel(int value) => Value = new IntValue(value);
 
-        [JsonProperty("value")]
-        public int Value { get; set; }
+        [JsonPropertyName("hue")]
+        public IntValue Value { get; set; }
     }
 }

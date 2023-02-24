@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Net.Http;
+using System.Net.Http.Json;
 using System.Text;
 using System.Threading.Tasks;
 using Nanoleaf.Client.Core;
 using Nanoleaf.Client.Exceptions;
+using Nanoleaf.Client.Models.Responses;
 
 namespace Nanoleaf.Client
 {
@@ -41,11 +43,27 @@ namespace Nanoleaf.Client
             }
         }
 
-        public async Task SendPutRequest(string json, string path = "")
+        public async Task<T> SendGetRequest<T>(string path = "")
         {
             var authorizedPath = _token + "/" + path;
 
-            using (var content = new StringContent(json, Encoding.UTF8, "application/json"))
+            using (var responseMessage = await _client.GetAsync(authorizedPath))
+            {
+                if (!responseMessage.IsSuccessStatusCode)
+                {
+                    HandleNanoleafErrorStatusCodes(responseMessage);
+                }
+
+                return await responseMessage.Content.ReadFromJsonAsync<T>();
+            }
+        }
+
+
+        public async Task SendPutRequest<T>(T inputValue, string path = "")
+        {
+            var authorizedPath = _token + "/" + path;
+
+            using (var content = JsonContent.Create<T>(inputValue))
             {
                 using (var responseMessage = await _client.PutAsync(authorizedPath, content))
                 {
@@ -57,7 +75,7 @@ namespace Nanoleaf.Client
             }
         }
 
-        public async Task<string> AddUserRequestAsync()
+        public async Task<UserToken> AddUserRequestAsync()
         {
             using (var responseMessage = await _client.PostAsync("new/", null))
             {
@@ -66,7 +84,7 @@ namespace Nanoleaf.Client
                     HandleNanoleafErrorStatusCodes(responseMessage);
                 }
 
-                return await responseMessage.Content.ReadAsStringAsync();
+                return await responseMessage.Content.ReadFromJsonAsync<UserToken>();
             }
         }
 
@@ -102,8 +120,17 @@ namespace Nanoleaf.Client
             }
         }
 
-        public void Dispose() {
-            if (_disposeClient) _client.Dispose();
+        public void Dispose()
+        {
+            Dispose(true);
+            GC.SuppressFinalize(true);
+        }
+        protected virtual void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                if (_disposeClient) _client.Dispose();
+            }
         }
     }
 }

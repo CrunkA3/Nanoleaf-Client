@@ -1,20 +1,12 @@
-﻿using Newtonsoft.Json;
+﻿using System.Text.Json.Serialization;
 
 namespace Nanoleaf.Client.Models.Requests.Brightness
 {
-    [JsonObject(Title = "brightness")]
     internal class SetBrightnessModel
     {
-        public SetBrightnessModel(int value, int duration)
-        {
-            Value = value;
-            Duration = duration;
-        }
+        public SetBrightnessModel(int value, int duration) => Brightness = new IntDurationValue(value, duration);
 
-        [JsonProperty("value")]
-        public int Value { get; set; }
-
-        [JsonProperty("duration")]
-        public int Duration { get; set; }
+        [JsonPropertyName("brightness")]
+        public IntDurationValue Brightness { get; set; }
     }
 }

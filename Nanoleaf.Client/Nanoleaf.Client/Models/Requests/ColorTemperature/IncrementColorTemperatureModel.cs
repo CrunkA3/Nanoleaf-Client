@@ -1,13 +1,12 @@
-﻿using Newtonsoft.Json;
+﻿using System.Text.Json.Serialization;
 
 namespace Nanoleaf.Client.Models.Requests.ColorTemperature
 {
-    [JsonObject(Title = "ct")]
     internal class IncrementColorTemperatureModel
     {
-        public IncrementColorTemperatureModel(int increment) => Increment = increment;
+        public IncrementColorTemperatureModel(int increment) => Increment = new IncrementValue(increment);
 
-        [JsonProperty("increment")]
-        public int Increment { get; set; }
+        [JsonPropertyName("ct")]
+        public IncrementValue Increment { get; set; }
     }
 }

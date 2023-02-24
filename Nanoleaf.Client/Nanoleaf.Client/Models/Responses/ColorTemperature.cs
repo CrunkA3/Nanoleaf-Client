@@ -1,16 +1,30 @@
-﻿using Newtonsoft.Json;
+﻿using System.Text.Json.Serialization;
 
 namespace Nanoleaf.Client.Models.Responses
 {
+    /// <summary>
+    /// color temperature response
+    /// </summary>
     public class ColorTemperature
     {
-        [JsonProperty("value")]
+        /// <summary>
+        /// current color termperature (Kelvin)
+        /// </summary>
+        [JsonPropertyName("value")]
         public int Value { get; set; }
 
-        [JsonProperty("max")]
+
+        /// <summary>
+        /// maximum color termperature (Kelvin)
+        /// </summary>
+        [JsonPropertyName("max")]
         public int Maximum { get; set; }
 
-        [JsonProperty("min")]
+
+        /// <summary>
+        /// minimum color termperature (Kelvin)
+        /// </summary>
+        [JsonPropertyName("min")]
         public int Minimum { get; set; }
     }
 }

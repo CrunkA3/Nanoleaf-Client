@@ -1,25 +1,25 @@
-﻿using Newtonsoft.Json;
+﻿using System.Text.Json.Serialization;
 
 namespace Nanoleaf.Client.Models.Responses
 {
     public class State
     {
-        [JsonProperty("on")]
+        [JsonPropertyName("on")]
         public Switch Switch { get; set; }
 
-        [JsonProperty("brightness")]
+        [JsonPropertyName("brightness")]
         public Brightness Brightness { get; set; }
 
-        [JsonProperty("hue")]
+        [JsonPropertyName("hue")]
         public Hue Hue { get; set; }
 
-        [JsonProperty("sat")]
+        [JsonPropertyName("sat")]
         public Saturation Saturation { get; set; }
 
-        [JsonProperty("ct")]
+        [JsonPropertyName("ct")]
         public ColorTemperature ColorTemperature { get; set; }
 
-        [JsonProperty("effect")]
+        [JsonPropertyName("effect")]
         public string ColorMode { get; set; }
     }
 }
