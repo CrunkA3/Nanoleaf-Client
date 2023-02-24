@@ -1,4 +1,4 @@
-# <img src="https://github.com/BullFrog13/Nanoleaf-Client/blob/master/nano1.png" width="60" height="60">
+based on (https://github.com/BullFrog13/Nanoleaf-Client)
 
 [![NuGet](https://img.shields.io/nuget/v/Nanoleaf.Core)](https://nuget.org/packages/Nanoleaf.Core)
 
