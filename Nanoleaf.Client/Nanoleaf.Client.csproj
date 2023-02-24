@@ -2,10 +2,10 @@
 
   <PropertyGroup>
     <TargetFrameworks>net6;net7</TargetFrameworks>
-    <PackageVersion>3.0.0.1</PackageVersion>
-    <Version>3.0.0.1</Version>
-    <AssemblyVersion>3.0.0.1</AssemblyVersion>
-    <FileVersion>3.0.0.1</FileVersion>
+    <PackageVersion>3.0.1.0</PackageVersion>
+    <Version>3.0.1.0</Version>
+    <AssemblyVersion>3.0.1.0</AssemblyVersion>
+    <FileVersion>3.0.1.0</FileVersion>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
     <Description>A dotnet library for Nanoleaf API.</Description>
     <PackageProjectUrl>https://github.com/CrunkA3/Nanoleaf-Client</PackageProjectUrl>
